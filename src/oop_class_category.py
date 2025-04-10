@@ -2,31 +2,32 @@ from src.oop_class_product import Product
 
 
 class Category:
+    """Класс категории с его свойствами и методом инициализации """
     name: str
     description: str
-    product: str
-    counter_categ = 0
-    counter_produc = 0
+    product: list
+    category_count = 0
+    product_count = 0
 
     def __init__(self, name, description, product):
-        self.name = name
-        self.description = description
-        self.product = product
-        Category.counter_categ += 1
-        Category.counter_produc += len(product) if product else 0
+        self.name = name if name else ""
+        self.description = description if description else ""
+        self.product = product if product else []
+        Category.category_count += 1
+        Category.product_count += len(product) if product else 0
 
 
 if __name__ == "__main__":
-    product = Product("Помидор", "Томат (или помидор) — "
-                                 "однолетнее или многолетнее травянистое растение, "
-                                 "вид рода Паслён (Solanum) семейства Паслёновые", 200, 100)
-    product1 = Product("Жвачка", "кулинарное изделие, "
-                                 "которое состоит из несъедобной эластичной основы "
-                                 "и различных вкусовых и ароматических добавок.", 10, 500)
-    category = Category("Овощи", "продукты", [product, product1])
+    product1 = Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
+    product2 = Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
+    product3 = Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14)
 
-    print(category.name)
-    print(category.description)
-    print(category.product)
-    print(category.counter_categ)
-    print(category.counter_produc)
+    category1 = Category("Смартфоны",
+                         "Смартфоны, как средство не только коммуникации,"
+                         " но и получения дополнительных функций для удобства жизни",
+                         [product1, product2, product3])
+    print(category1.name)
+    print(category1.description)
+    print(category1.product)
+    print(category1.category_count)
+    print(category1.product_count)
