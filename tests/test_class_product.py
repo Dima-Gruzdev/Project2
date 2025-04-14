@@ -1,4 +1,5 @@
 
+
 def test_product(right_product):
     assert right_product.name == "Samsung Galaxy S23 Ultra"
     assert right_product.description == "256GB, Серый цвет, 200MP камера"
@@ -11,3 +12,12 @@ def test_empty_product(empty_product):
     assert empty_product.description == ""
     assert empty_product.price == 0.0
     assert empty_product.quantity == 0
+
+
+# def test_new_product():
+#     dict_product =  {"name": "Iphone 15", "descriprion": "512GB, Gray space", "price": 210000.0, "quantity": 8}
+#     product = Product(dict_product)
+#     assert product.name == "Iphone 15"
+#     assert product.description == "512GB, Gray space"
+#     assert product.price == 210000.0
+#     assert product.quantity == 8
