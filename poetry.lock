@@ -298,6 +298,7 @@ pluggy = ">=1.5,<2"
 dev = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "pygments (>=2.7.2)", "requests", "setuptools", "xmlschema"]
 
 [[package]]
+
 name = "typing-extensions"
 version = "4.13.1"
 description = "Backported and Experimental Type Hints for Python 3.8+"
@@ -312,4 +313,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13"
-content-hash = "a17a0eb9461198b0f326a75e252373d6ac3e1fe914eef50d6f40ff34d569a26b"
+
