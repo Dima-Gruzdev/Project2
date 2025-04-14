@@ -8,8 +8,29 @@ class Product:
     def __init__(self, name, description, price, quanity):
         self.name = name if name else ""
         self.description = description if name else ""
-        self.price = price if price else 0.0
+        self.__price = price if price else 0.0
         self.quantity = quanity if quanity else 0
+
+    @classmethod
+    def new_product(cls, new_product):
+        name = new_product["name"]
+        description = new_product["description"]
+        price = new_product["price"]
+        quantity = new_product["quantity"]
+        return cls(name, description, price, quantity)
+
+    @property
+    def price(self):
+        return self.__price
+
+    @price.setter
+    def price(self, amount):
+        if amount <= 0:
+            print(f"Цена не может быть ниже или равна  0 как указали вы {amount}")
+        else:
+            self.__price = amount
+
+
 
 
 if __name__ == "__main__":
