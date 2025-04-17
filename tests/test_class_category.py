@@ -12,3 +12,7 @@ def test_empty_cat(empty_cat):
     assert empty_cat.description == ""
     assert empty_cat.products == ""
     assert Category.product_count == 0
+
+
+def test_str_cat(firs_cat):
+    assert str(firs_cat) =='Cмартфоны, количество продуктов: 2 шт '

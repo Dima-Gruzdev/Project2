@@ -22,3 +22,11 @@ def test_new_product():
     assert product.description == "512GB, Gray space"
     assert product.price == 210000.0
     assert product.quantity == 8
+
+
+def test_str_prod(str_product):
+    assert str(str_product) == "Product, 90.0 руб. Остаток:  5 шт."
+
+
+def test_add_prod(phone_1, phone_2):
+    assert phone_1 + phone_2 == 940000.0
