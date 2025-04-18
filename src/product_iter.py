@@ -4,11 +4,9 @@ from src.oop_class_product import Product
 
 class ProductIter:
 
-
     def __init__(self, category_obj):
         self.category = category_obj
         self.index = 0
-
 
     def __iter__(self):
         return self
@@ -34,5 +32,3 @@ if __name__ == "__main":
     iterator = ProductIter(category1)
     for prod in iterator:
         print(prod)
-
-

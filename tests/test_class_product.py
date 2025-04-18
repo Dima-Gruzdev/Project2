@@ -16,7 +16,7 @@ def test_empty_product(empty_product):
 
 
 def test_new_product():
-    dict_product =  {"name": "Iphone 15", "description": "512GB, Gray space", "price": 210000.0, "quantity": 8}
+    dict_product = {"name": "Iphone 15", "description": "512GB, Gray space", "price": 210000.0, "quantity": 8}
     product = Product.new_product(dict_product)
     assert product.name == "Iphone 15"
     assert product.description == "512GB, Gray space"

@@ -20,7 +20,6 @@ class Category:
         total_qty = self.total_quantity()
         return f"{self.name}, количество продуктов: {total_qty} шт "
 
-
     def add_product(self, product: Product):
         if isinstance(product, Product):
             self.__products.append(product)
