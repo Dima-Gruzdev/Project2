@@ -17,7 +17,8 @@ class Category:
         Category.product_count += len(product) if product else 0
 
     def __str__(self):
-        return f"{self.name}, количество продуктов: {len(self.__products)} шт "
+        total_qty = self.total_quantity()
+        return f"{self.name}, количество продуктов: {total_qty} шт "
 
 
     def add_product(self, product: Product):
@@ -26,6 +27,9 @@ class Category:
             Category.product_count += 1
         else:
             print("product не является экземпляром класса Product")
+
+    def total_quantity(self):
+        return sum(product.quantity for product in self.__products)
 
     @property
     def products(self):
