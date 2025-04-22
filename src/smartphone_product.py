@@ -8,9 +8,9 @@ class Smartphone(Product):
         """Метод инициализация категорий"""
         super().__init__(name, description, price, quanity)
         self.efficiency = efficiency
-        self.model = model
-        self.memory = memory
-        self.color = color
+        self.model = model if model else ""
+        self.memory = memory if memory else 0
+        self.color = color if color else ""
 
     def __add__(self, other):
         """ метод сложения из одинаковых классов продуктов """
