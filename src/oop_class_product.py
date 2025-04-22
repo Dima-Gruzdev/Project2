@@ -11,6 +11,15 @@ class Product:
         self.__price = price if price else 0.0
         self.quantity = quanity if quanity else 0
 
+    def __str__(self):
+        return f"{self.name}, {self.price} руб. Остаток:  {self.quantity} шт."
+
+    def __add__(self, other):
+        if type(other) is Product:
+            return self.quantity * self.price + other.quantity * other.price
+        else:
+            raise TypeError
+
     @classmethod
     def new_product(cls, new_product):
         name = new_product["name"]
@@ -40,3 +49,4 @@ if __name__ == "__main__":
     print(product1.description)
     print(product1.price)
     print(product1.quantity)
+    print(product1 + product2)
