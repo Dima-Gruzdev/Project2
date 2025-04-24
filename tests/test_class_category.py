@@ -15,4 +15,4 @@ def test_empty_cat(empty_cat):
 
 
 def test_str_cat(firs_cat):
-    assert str(firs_cat) == 'Cмартфоны, количество продуктов: 2 шт '
+    assert str(firs_cat) == 'Cмартфоны, количество продуктов: 13 шт '
