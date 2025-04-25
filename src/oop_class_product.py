@@ -1,4 +1,8 @@
-class Product:
+from src.base_product import BaseProduct
+from src.print_mixin import MixinProduct
+
+
+class Product(BaseProduct, MixinProduct):
     """Класс продукта с его общими свойствами и методам инициализации"""
     name: str
     description: str
@@ -10,6 +14,7 @@ class Product:
         self.description = description if name else ""
         self.__price = price if price else 0.0
         self.quantity = quanity if quanity else 0
+        super().__init__()
 
     def __str__(self):
         return f"{self.name}, {self.price} руб. Остаток:  {self.quantity} шт."
