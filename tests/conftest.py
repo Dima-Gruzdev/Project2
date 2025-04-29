@@ -27,19 +27,19 @@ def empty_cat():
 
 @pytest.fixture
 def empty_product():
-    return Product("", "", 0.0, 0)
+    return Product("", "", 0.0, 5)
 
 
 @pytest.fixture
 def str_product():
     return Product(name="Product", description="Description of the product",
-                   price=90.0, quanity=5, )
+                   price=90.0, quantity=5, )
 
 
 @pytest.fixture
 def second_product():
     return Product(name="Product", description="Description of the product number two",
-                   price=200.0, quanity=20, )
+                   price=200.0, quantity=20, )
 
 
 @pytest.fixture
@@ -75,7 +75,7 @@ def smart_prod2():
 
 @pytest.fixture
 def empty_smart():
-    return Smartphone("", "", 0.0, 0, 0, "", 0, "")
+    return Smartphone("", "", 0.0, 5, 0, "", 0, "")
 
 
 @pytest.fixture
@@ -90,3 +90,10 @@ def lawngrass_prod2():
     return LawnGrass("Samsung Galaxy S23 Ultra",
                      "256GB, Серый цвет, 200MP камера", 20000.0,
                      5, "China", "5 дней", "red")
+
+
+@pytest.fixture
+def middle_test():
+    return Category(name="Смартфоны",
+                    description="Смартфоны, как средство не только коммуникации,"
+                                " но и получения дополнительных функций для удобства жизни", product=[])

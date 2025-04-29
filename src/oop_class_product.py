@@ -9,11 +9,14 @@ class Product(BaseProduct, MixinProduct):
     price: float
     quantity: int
 
-    def __init__(self, name, description, price, quanity):
+    def __init__(self, name, description, price, quantity):
         self.name = name if name else ""
         self.description = description if name else ""
         self.__price = price if price else 0.0
-        self.quantity = quanity if quanity else 0
+        if quantity > 0:
+            self.quantity = quantity
+        else:
+            raise ValueError("Товар с нулевым количеством не может быть добавлен.")
         super().__init__()
 
     def __str__(self):
