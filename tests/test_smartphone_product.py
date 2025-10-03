@@ -17,7 +17,7 @@ def test_smart_prod_empty(empty_smart):
     assert empty_smart.name == ""
     assert empty_smart.description == ""
     assert empty_smart.price == 0.0
-    assert empty_smart.quantity == 0
+    assert empty_smart.quantity == 5
     assert empty_smart.efficiency == 0
     assert empty_smart.model == ""
     assert empty_smart.memory == 0

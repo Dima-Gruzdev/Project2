@@ -1,3 +1,7 @@
+
+
+import pytest
+
 from src.oop_class_product import Product
 
 
@@ -12,7 +16,7 @@ def test_empty_product(empty_product):
     assert empty_product.name == ""
     assert empty_product.description == ""
     assert empty_product.price == 0.0
-    assert empty_product.quantity == 0
+    assert empty_product.quantity == 5
 
 
 def test_new_product():
@@ -30,3 +34,8 @@ def test_str_prod(str_product):
 
 def test_add_prod(phone_1, phone_2):
     assert phone_1 + phone_2 == 940000.0
+
+
+def test_init_quan():
+    with pytest.raises(ValueError, match="Товар с нулевым количеством не может быть добавлен."):
+        Product("Samsung", "smartphone", 100.0, 0)
