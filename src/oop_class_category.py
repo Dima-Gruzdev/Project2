@@ -22,20 +22,39 @@ class Category:
 
     def add_product(self, product: Product):
         if isinstance(product, Product):
-            self.__products.append(product)
-            Category.product_count += 1
+            try:
+                if product.quantity == 0:
+                    raise ZeroDivisionError(
+                        "Нельзя добавить товар с нулевым количеством")
+            except ZeroDivisionError as error:
+                print(str(error))
+            else:
+                self.__products.append(product)
+                Category.product_count += 1
+                print("Товар успешно добавлен")
+            finally:
+                print("Обработка добавления товара завершена")
         else:
-            print("product не является экземпляром класса Product")
+            raise TypeError
 
     def total_quantity(self):
         return sum(product.quantity for product in self.__products)
 
     @property
     def products(self):
+
         product_str = ""
         for product in self.__products:
             product_str += f"{str(product)}\n"
         return product_str
+
+    def middle_price(self):
+        """Метод который подсчитывает среднию цену продукта"""
+        try:
+            return sum(product.price for product in self.__products) / len(
+                self.__products)
+        except ZeroDivisionError:
+            return 0
 
 
 if __name__ == "__main__":
